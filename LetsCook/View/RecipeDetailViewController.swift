@@ -10,14 +10,33 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController {
 
+    var recipe: RecipeViewModel!
+    var recipeDetailVM: RecipeDetailViewViewModelProtocol?
+    
     @IBOutlet weak var recipeImage: UIImageView!
     
     @IBOutlet var ratingImages: [UIImageView]!
     @IBOutlet weak var instructionsTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        recipeDetailVM = RecipeDetailViewViewModel(recipe: recipe)
+        
+        recipeDetailVM?.getRecipeDetail(completion: { [weak self] _ in
+            self?.updateView()
+        })
 
         // Do any additional setup after loading the view.
+    }
+    
+    func updateView() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.recipeDetailVM?.setImage(to: self.recipeImage)
+            self.recipeDetailVM?.setRating(to: self.ratingImages)
+            self.navigationItem.title = self.recipeDetailVM?.title
+            self.instructionsTextView.text = self.recipeDetailVM?.instructions
+        }
     }
     
 

@@ -11,6 +11,7 @@ import UIKit
 class RecipesViewController: UIViewController {
 
     let reusableId = "recipeCell"
+    let segueId = "recipeDetail"
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var recipesTableView: UITableView!
     
@@ -33,6 +34,12 @@ class RecipesViewController: UIViewController {
         let recipe = recipesViewModel?.recipe(at: index)
         cell.textLabel?.text = recipe?.title
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC  = segue.destination as? RecipeDetailViewController, let recipe = sender as? RecipeViewModel {
+            destinationVC.recipe = recipe
+        }
+    }
 }
 
 extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -47,6 +54,7 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let recipe = recipesViewModel?.recipe(at: indexPath.row)
+        performSegue(withIdentifier: segueId, sender: recipe)
     }
 }

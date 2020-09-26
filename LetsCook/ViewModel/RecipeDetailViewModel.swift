@@ -17,7 +17,7 @@ protocol RecipeDetailViewModelProtocol: RecipeViewModelProtocol {
 }
 
 class RecipeDetailViewModel: RecipeDetailViewModelProtocol {
-    let recipeDetail: RecipeDetail
+    var recipeDetail: RecipeDetail
     
     var id: Int {
         return recipeDetail.id

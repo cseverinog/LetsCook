@@ -21,6 +21,7 @@
 		6CA11A47251FDA3E003FA2DB /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11A46251FDA3E003FA2DB /* RecipeDetail.swift */; };
 		6CA11A49251FDABF003FA2DB /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11A48251FDABF003FA2DB /* APIManager.swift */; };
 		6CE1E9AF251FE8CD004A5045 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1E9AE251FE8CD004A5045 /* RecipeDetailViewController.swift */; };
+		6CE1E9B1251FEAC0004A5045 /* RecipeDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1E9B0251FEAC0004A5045 /* RecipeDetailViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		6CA11A46251FDA3E003FA2DB /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
 		6CA11A48251FDABF003FA2DB /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		6CE1E9AE251FE8CD004A5045 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		6CE1E9B0251FEAC0004A5045 /* RecipeDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				6C34AE0F251FDEBA00C69E01 /* RecipeViewModel.swift */,
 				6C34AE11251FDF6E00C69E01 /* RecipeDetailViewModel.swift */,
 				6C34AE14251FE1B400C69E01 /* RecipesViewModel.swift */,
+				6CE1E9B0251FEAC0004A5045 /* RecipeDetailViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				6C34AE10251FDEBA00C69E01 /* RecipeViewModel.swift in Sources */,
 				6CA11A47251FDA3E003FA2DB /* RecipeDetail.swift in Sources */,
 				6C34AE12251FDF6E00C69E01 /* RecipeDetailViewModel.swift in Sources */,
+				6CE1E9B1251FEAC0004A5045 /* RecipeDetailViewViewModel.swift in Sources */,
 				6C34AE15251FE1B400C69E01 /* RecipesViewModel.swift in Sources */,
 				6CA11A24251FD566003FA2DB /* SceneDelegate.swift in Sources */,
 				6CE1E9AF251FE8CD004A5045 /* RecipeDetailViewController.swift in Sources */,
