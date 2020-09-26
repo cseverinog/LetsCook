@@ -18,7 +18,7 @@ protocol RecipeDetailViewViewModelProtocol {
 }
 
 class RecipeDetailViewViewModel: RecipeDetailViewViewModelProtocol {
-    var recipe: RecipeViewModel
+    var recipeId: Int
     var recipeDetail: RecipeDetailViewModel?
     
     var title: String? {
@@ -29,12 +29,12 @@ class RecipeDetailViewViewModel: RecipeDetailViewViewModelProtocol {
         return recipeDetail?.instructions
     }
     
-    init(recipe: RecipeViewModel) {
-        self.recipe = recipe
+    init(recipeId: Int) {
+        self.recipeId = recipeId
     }
     
     func getRecipeDetail(completion: @escaping ((Bool) -> Void)) {
-        APIManager.shared.getRecipeDetail(with: recipe.id) { [weak self] (recipeDetail) in
+        APIManager.shared.getRecipeDetail(with: recipeId) { [weak self] (recipeDetail) in
             guard let recipeDetail = recipeDetail else { return }
             self?.recipeDetail = RecipeDetailViewModel(recipeDetail: recipeDetail)
             completion(true)

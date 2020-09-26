@@ -36,8 +36,8 @@ class RecipesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC  = segue.destination as? RecipeDetailViewController, let recipe = sender as? RecipeViewModel {
-            destinationVC.recipe = recipe
+        if let destinationVC  = segue.destination as? RecipeDetailViewController, let recipeId = sender as? Int {
+            destinationVC.recipeId = recipeId
         }
     }
 }
@@ -55,6 +55,6 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipe = recipesViewModel?.recipe(at: indexPath.row)
-        performSegue(withIdentifier: segueId, sender: recipe)
+        performSegue(withIdentifier: segueId, sender: recipe?.id)
     }
 }

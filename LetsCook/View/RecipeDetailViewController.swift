@@ -10,7 +10,7 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController {
 
-    var recipe: RecipeViewModel!
+    var recipeId: Int!
     var recipeDetailVM: RecipeDetailViewViewModelProtocol?
     
     @IBOutlet weak var recipeImage: UIImageView!
@@ -20,7 +20,7 @@ class RecipeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeDetailVM = RecipeDetailViewViewModel(recipe: recipe)
+        recipeDetailVM = RecipeDetailViewViewModel(recipeId: recipeId)
         
         recipeDetailVM?.getRecipeDetail(completion: { [weak self] _ in
             self?.updateView()
