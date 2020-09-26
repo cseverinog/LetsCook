@@ -14,6 +14,7 @@ class RecipesViewController: UIViewController {
     let segueId = "recipeDetail"
     let searchController = UISearchController(searchResultsController: nil)
     
+    @IBOutlet weak var noResultsLabel: UILabel!
     @IBOutlet weak var recipesTableView: UITableView!
     
     var recipesViewModel: RecipesViewModelProtocol?
@@ -33,11 +34,15 @@ class RecipesViewController: UIViewController {
             }
         })
         
+        configureSearchController()
+    }
+    
+    fileprivate func configureSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.barTintColor = .white
         navigationItem.searchController = searchController
-        navigationController?.navigationBar.barTintColor = .orange
         definesPresentationContext = true
     }
     
@@ -55,6 +60,12 @@ class RecipesViewController: UIViewController {
 
 extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let numberOfRecipes = recipesViewModel?.numberOfRecipes() ?? 0
+        if numberOfRecipes == 0 && !isSearchBarEmpty {
+            noResultsLabel.isHidden = false
+        } else {
+            noResultsLabel.isHidden = true
+        }
         return recipesViewModel?.numberOfRecipes() ?? 0
     }
     
@@ -65,6 +76,7 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         let recipe = recipesViewModel?.recipe(at: indexPath.row)
         performSegue(withIdentifier: segueId, sender: recipe?.id)
     }
