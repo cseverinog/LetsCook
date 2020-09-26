@@ -44,12 +44,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="WO7-Dg-0ti">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tmB-Hs-r7z" secondAttribute="bottom" id="5w5-oh-IUL"/>
                             <constraint firstItem="Rei-Nu-X4E" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8El-1o-dxg"/>
+                            <constraint firstItem="WO7-Dg-0ti" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="93V-NT-boA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tmB-Hs-r7z" secondAttribute="trailing" id="Bng-sK-pag"/>
+                            <constraint firstItem="WO7-Dg-0ti" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JAK-Sw-V3C"/>
                             <constraint firstItem="tmB-Hs-r7z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XFl-wf-EqY"/>
                             <constraint firstItem="Rei-Nu-X4E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y8z-Ot-z15"/>
                             <constraint firstItem="tmB-Hs-r7z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pFc-RY-ebB"/>
@@ -58,6 +63,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recipes" id="cOm-II-hDu"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="WO7-Dg-0ti" id="Rcf-Mr-vZS"/>
                         <outlet property="noResultsLabel" destination="Rei-Nu-X4E" id="tMd-fa-aWW"/>
                         <outlet property="recipesTableView" destination="tmB-Hs-r7z" id="WeA-2n-Vj9"/>
                         <segue destination="hYD-8z-RLR" kind="show" identifier="recipeDetail" id="3OJ-PD-5cp"/>

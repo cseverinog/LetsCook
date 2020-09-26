@@ -14,7 +14,6 @@ class RecipeDetailViewController: UIViewController {
     var recipeDetailVM: RecipeDetailViewViewModelProtocol?
     
     @IBOutlet weak var recipeImage: UIImageView!
-    
     @IBOutlet var ratingImages: [UIImageView]!
     @IBOutlet weak var instructionsTextView: UITextView!
     
@@ -25,8 +24,6 @@ class RecipeDetailViewController: UIViewController {
         recipeDetailVM?.getRecipeDetail(completion: { [weak self] _ in
             self?.updateView()
         })
-
-        // Do any additional setup after loading the view.
     }
     
     func updateView() {
@@ -38,16 +35,4 @@ class RecipeDetailViewController: UIViewController {
             self.instructionsTextView.text = self.recipeDetailVM?.instructions
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -14,22 +14,25 @@ class RecipesViewController: UIViewController {
     let segueId = "recipeDetail"
     let searchController = UISearchController(searchResultsController: nil)
     
-    @IBOutlet weak var noResultsLabel: UILabel!
-    @IBOutlet weak var recipesTableView: UITableView!
-    
     var recipesViewModel: RecipesViewModelProtocol?
     
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
+    @IBOutlet weak var noResultsLabel: UILabel!
+    @IBOutlet weak var recipesTableView: UITableView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         recipesTableView.dataSource = self
         recipesTableView.delegate = self
         recipesViewModel = RecipesViewModel()
+        loadingIndicator.startAnimating()
         recipesViewModel?.getRecipes(completion: { [weak self] _ in
             DispatchQueue.main.async {
+                self?.loadingIndicator.stopAnimating()
                 self?.recipesTableView.reloadData()
             }
         })
@@ -61,12 +64,8 @@ class RecipesViewController: UIViewController {
 extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRecipes = recipesViewModel?.numberOfRecipes() ?? 0
-        if numberOfRecipes == 0 && !isSearchBarEmpty {
-            noResultsLabel.isHidden = false
-        } else {
-            noResultsLabel.isHidden = true
-        }
-        return recipesViewModel?.numberOfRecipes() ?? 0
+        noResultsLabel.isHidden = !(numberOfRecipes == 0 && !isSearchBarEmpty)
+        return numberOfRecipes
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
