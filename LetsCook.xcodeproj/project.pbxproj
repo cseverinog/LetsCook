@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		6C34AE10251FDEBA00C69E01 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34AE0F251FDEBA00C69E01 /* RecipeViewModel.swift */; };
 		6C34AE12251FDF6E00C69E01 /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34AE11251FDF6E00C69E01 /* RecipeDetailViewModel.swift */; };
+		6C34AE15251FE1B400C69E01 /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C34AE14251FE1B400C69E01 /* RecipesViewModel.swift */; };
 		6CA11A22251FD566003FA2DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11A21251FD566003FA2DB /* AppDelegate.swift */; };
 		6CA11A24251FD566003FA2DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11A23251FD566003FA2DB /* SceneDelegate.swift */; };
-		6CA11A26251FD566003FA2DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11A25251FD566003FA2DB /* ViewController.swift */; };
+		6CA11A26251FD566003FA2DB /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11A25251FD566003FA2DB /* RecipesViewController.swift */; };
 		6CA11A29251FD566003FA2DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA11A27251FD566003FA2DB /* Main.storyboard */; };
 		6CA11A2B251FD567003FA2DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CA11A2A251FD567003FA2DB /* Assets.xcassets */; };
 		6CA11A2E251FD567003FA2DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA11A2C251FD567003FA2DB /* LaunchScreen.storyboard */; };
@@ -19,6 +20,7 @@
 		6CA11A44251FD9F6003FA2DB /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11A43251FD9F6003FA2DB /* Recipe.swift */; };
 		6CA11A47251FDA3E003FA2DB /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11A46251FDA3E003FA2DB /* RecipeDetail.swift */; };
 		6CA11A49251FDABF003FA2DB /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11A48251FDABF003FA2DB /* APIManager.swift */; };
+		6CE1E9AF251FE8CD004A5045 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1E9AE251FE8CD004A5045 /* RecipeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +36,11 @@
 /* Begin PBXFileReference section */
 		6C34AE0F251FDEBA00C69E01 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		6C34AE11251FDF6E00C69E01 /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
+		6C34AE14251FE1B400C69E01 /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		6CA11A1E251FD566003FA2DB /* LetsCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA11A21251FD566003FA2DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CA11A23251FD566003FA2DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6CA11A25251FD566003FA2DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6CA11A25251FD566003FA2DB /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		6CA11A28251FD566003FA2DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CA11A2A251FD567003FA2DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CA11A2D251FD567003FA2DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		6CA11A43251FD9F6003FA2DB /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		6CA11A46251FDA3E003FA2DB /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
 		6CA11A48251FDABF003FA2DB /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		6CE1E9AE251FE8CD004A5045 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +77,20 @@
 			children = (
 				6C34AE0F251FDEBA00C69E01 /* RecipeViewModel.swift */,
 				6C34AE11251FDF6E00C69E01 /* RecipeDetailViewModel.swift */,
+				6C34AE14251FE1B400C69E01 /* RecipesViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6C34AE13251FE15500C69E01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6CA11A2C251FD567003FA2DB /* LaunchScreen.storyboard */,
+				6CA11A27251FD566003FA2DB /* Main.storyboard */,
+				6CA11A25251FD566003FA2DB /* RecipesViewController.swift */,
+				6CE1E9AE251FE8CD004A5045 /* RecipeDetailViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6CA11A15251FD566003FA2DB = {
@@ -98,15 +114,13 @@
 		6CA11A20251FD566003FA2DB /* LetsCook */ = {
 			isa = PBXGroup;
 			children = (
+				6C34AE13251FE15500C69E01 /* View */,
 				6C34AE0E251FDE9A00C69E01 /* ViewModel */,
 				6CA11A4A251FDAC4003FA2DB /* Networking */,
 				6CA11A45251FDA2B003FA2DB /* Model */,
 				6CA11A21251FD566003FA2DB /* AppDelegate.swift */,
 				6CA11A23251FD566003FA2DB /* SceneDelegate.swift */,
-				6CA11A25251FD566003FA2DB /* ViewController.swift */,
-				6CA11A27251FD566003FA2DB /* Main.storyboard */,
 				6CA11A2A251FD567003FA2DB /* Assets.xcassets */,
-				6CA11A2C251FD567003FA2DB /* LaunchScreen.storyboard */,
 				6CA11A2F251FD567003FA2DB /* Info.plist */,
 			);
 			path = LetsCook;
@@ -240,12 +254,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CA11A49251FDABF003FA2DB /* APIManager.swift in Sources */,
-				6CA11A26251FD566003FA2DB /* ViewController.swift in Sources */,
+				6CA11A26251FD566003FA2DB /* RecipesViewController.swift in Sources */,
 				6CA11A22251FD566003FA2DB /* AppDelegate.swift in Sources */,
 				6C34AE10251FDEBA00C69E01 /* RecipeViewModel.swift in Sources */,
 				6CA11A47251FDA3E003FA2DB /* RecipeDetail.swift in Sources */,
 				6C34AE12251FDF6E00C69E01 /* RecipeDetailViewModel.swift in Sources */,
+				6C34AE15251FE1B400C69E01 /* RecipesViewModel.swift in Sources */,
 				6CA11A24251FD566003FA2DB /* SceneDelegate.swift in Sources */,
+				6CE1E9AF251FE8CD004A5045 /* RecipeDetailViewController.swift in Sources */,
 				6CA11A44251FD9F6003FA2DB /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
