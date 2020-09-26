@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class APIManager {
     static let recipesEndpoint = "https://gl-endpoint.herokuapp.com/recipes/"
@@ -57,6 +58,23 @@ class APIManager {
                 } catch {
                     completion(nil)
                 }
+            }
+        }.resume()
+    }
+    
+    func getImage(with urlString: String, completion: @escaping((_ image: UIImage?) -> Void)) {
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if error != nil {
+                print(error?.localizedDescription)
+                completion(nil)
+            } else {
+                guard let data = data else {
+                    completion(nil)
+                    return
+                }
+                completion(UIImage(data: data))
             }
         }.resume()
     }
