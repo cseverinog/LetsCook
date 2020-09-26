@@ -13,14 +13,17 @@ protocol RecipesViewModelProtocol {
     func numberOfRecipes() -> Int
     func getRecipes(completion: @escaping ((Bool) -> Void))
     func recipe(at index: Int) -> RecipeViewModel
+    func filterRecipes(for text: String)
 }
 
 class RecipesViewModel: RecipesViewModelProtocol {
     
     var recipes = [RecipeViewModel]()
+    var filteredRecipes = [RecipeViewModel]()
+    var isFiltering = false
     
     func numberOfRecipes() -> Int {
-        return recipes.count
+        return isFiltering ? filteredRecipes.count : recipes.count
     }
     
     func getRecipes(completion: @escaping ((Bool) -> Void)) {
@@ -31,6 +34,14 @@ class RecipesViewModel: RecipesViewModelProtocol {
     }
     
     func recipe(at index: Int) -> RecipeViewModel {
-        return recipes[index]
+        return isFiltering ? filteredRecipes[index] : recipes[index]
+    }
+    
+    func filterRecipes(for text: String) {
+        isFiltering = !text.isEmpty
+        
+        if isFiltering {
+            filteredRecipes = recipes.filter { $0.title.lowercased().contains(text.lowercased())}
+        }
     }
 }

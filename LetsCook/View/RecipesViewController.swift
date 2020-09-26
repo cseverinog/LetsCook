@@ -12,10 +12,15 @@ class RecipesViewController: UIViewController {
 
     let reusableId = "recipeCell"
     let segueId = "recipeDetail"
-    @IBOutlet weak var searchBar: UISearchBar!
+    let searchController = UISearchController(searchResultsController: nil)
+    
     @IBOutlet weak var recipesTableView: UITableView!
     
     var recipesViewModel: RecipesViewModelProtocol?
+    
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +32,13 @@ class RecipesViewController: UIViewController {
                 self?.recipesTableView.reloadData()
             }
         })
-        // Do any additional setup after loading the view.
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        navigationController?.navigationBar.barTintColor = .orange
+        definesPresentationContext = true
     }
     
     func configure(cell: UITableViewCell, index: Int) {
@@ -57,4 +68,16 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
         let recipe = recipesViewModel?.recipe(at: indexPath.row)
         performSegue(withIdentifier: segueId, sender: recipe?.id)
     }
+}
+
+extension RecipesViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterRecipesForText(searchController.searchBar.text ?? "")
+    }
+    
+    func filterRecipesForText(_ text: String) {
+        recipesViewModel?.filterRecipes(for: text)
+        recipesTableView.reloadData()
+    }
+    
 }
